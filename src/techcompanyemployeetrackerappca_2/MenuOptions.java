@@ -37,5 +37,14 @@ public enum MenuOptions {
         }
     }
     
-    
+    /*values() puts in a array every constants in enum. 
+    Also 1st index starts from 0 but in menu option 1st choice number 1 
+    thats why ı put -1 to decrease to choice number.
+    */
+    public static MenuOptions fromInt(int choice){
+        if(choice < 1 || choice > values().length){
+            throw new IllegalArgumentException("Invalid menu option");
+        }
+        return values()[choice - 1];
+    }
 }
