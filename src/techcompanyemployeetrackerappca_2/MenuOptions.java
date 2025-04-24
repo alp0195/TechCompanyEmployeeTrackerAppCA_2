@@ -27,4 +27,15 @@ public enum MenuOptions {
     public String getTopmenu(){
         return this.topmenu;
     }
+    
+    //That's make visible options menu in terminal for users
+    public static void printMenu(){
+        System.out.println("*** Employee Menu ***\n");
+        MenuOptions[] options = MenuOptions.values();
+        for(int i = 0; i < options.length; i++){
+            System.out.println((i + 1)+". "+ options[i].getTopmenu());
+        }
+    }
+    
+    
 }
