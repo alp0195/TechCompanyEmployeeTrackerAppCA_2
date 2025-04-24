@@ -20,9 +20,10 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
         do{ //menu will run until user choose option 5
             MenuOptionsCA_2.printMenu();
             System.out.println("Please enter a number to select an option.");
-            int userInput = scanner.nextInt();        
+            int userInput;        
         
-            try{            
+            try{
+                userInput = Integer.parseInt(scanner.nextLine());
                 selected = MenuOptionsCA_2.fromInt(userInput);
                 System.out.println(selected.getTopmenu());
             
@@ -31,6 +32,20 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
             }
         }while(selected != MenuOptionsCA_2.EXIT);
         
+        switch(selected){
+            
+            case SORT:
+                break;
+            case SHUFFLE:
+                break;
+            case SEARCH:
+                break;
+            case ADD_EMPLOYEE_MENU:
+                break;
+            case EXIT:
+                System.out.println("Exited from program...");
+                break;
+        }
     }
     
 }
