@@ -4,6 +4,11 @@
  */
 package techcompanyemployeetrackerappca_2;
 import java.util.Scanner;
+import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.ADD_EMPLOYEE_MENU;
+import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.EXIT;
+import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.SEARCH;
+import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.SHUFFLE;
+import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.SORT;
 /**
  *
  * @author alper
@@ -16,6 +21,7 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         MenuOptionsCA_2 selected = null;
+        SubMenuCA_2 selected1 = null;
         
         do{ //menu will run until user choose option 5
             MenuOptionsCA_2.printMenu();
@@ -26,13 +32,7 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                 userInput = Integer.parseInt(scanner.nextLine());
                 selected = MenuOptionsCA_2.fromInt(userInput);
                 System.out.println(selected.getTopmenu());
-            
-            }catch(IllegalArgumentException e){
-                System.out.println("Invalid option has chosen.");
-            }
-        }while(selected != MenuOptionsCA_2.EXIT);
-        
-        switch(selected){
+                switch(selected){
             
             case SORT:
                 break;
@@ -41,11 +41,33 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
             case SEARCH:
                 break;
             case ADD_EMPLOYEE_MENU:
+                //sub menu options will run in there
+                do{
+                    SubMenuCA_2.printSubmenu();
+                    System.out.println("Please enter a number to select an option.");
+                    int userInput1;
+                    
+                    try{
+                        userInput1 = Integer.parseInt(scanner.nextLine());
+                        selected1 = SubMenuCA_2.fromInt(userInput1);
+                        System.out.println(selected1.getSubmenu());
+                    }catch(IllegalArgumentException e){
+                        System.out.println("Invalid option has chosen.");
+                    }
+                //when user choose return option program turn back to top menu
+                }while(selected1 != SubMenuCA_2.RETURN);
                 break;
             case EXIT:
                 System.out.println("Exited from program...");
                 break;
         }
+            
+            }catch(IllegalArgumentException e){
+                System.out.println("Invalid option has chosen.");
+            }
+        }while(selected != MenuOptionsCA_2.EXIT);
+        
+        
     }
     
 }
