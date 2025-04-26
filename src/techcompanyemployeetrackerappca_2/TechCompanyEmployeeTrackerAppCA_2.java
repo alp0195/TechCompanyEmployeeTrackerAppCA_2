@@ -34,32 +34,50 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                 System.out.println(selected.getTopmenu());
                 switch(selected){
             
-            case SORT:
-                break;
-            case SHUFFLE:
-                break;
-            case SEARCH:
-                break;
-            case ADD_EMPLOYEE_MENU:
-                //sub menu options will run in there
-                do{
-                    SubMenuCA_2.printSubmenu();
-                    System.out.println("Please enter a number to select an option.");
-                    int userInput1;
+                    case SORT:
+                    break;
+                    case SHUFFLE:
+                    break;
+                    case SEARCH:
+                    break;
+                    case ADD_EMPLOYEE_MENU:
+                    //sub menu options will run in there
+                    do{
+                        SubMenuCA_2.printSubmenu();
+                        System.out.println("Please enter a number to select an option.");
+                        int userInput1;
                     
-                    try{
-                        userInput1 = Integer.parseInt(scanner.nextLine());
-                        selected1 = SubMenuCA_2.fromInt(userInput1);
-                        System.out.println(selected1.getSubmenu());
-                    }catch(IllegalArgumentException e){
-                        System.out.println("Invalid option has chosen.");
-                    }
-                //when user choose return option program turn back to top menu
-                }while(selected1 != SubMenuCA_2.RETURN);
-                break;
-            case EXIT:
-                System.out.println("Exited from program...");
-                break;
+                        try{
+                            userInput1 = Integer.parseInt(scanner.nextLine());
+                            selected1 = SubMenuCA_2.fromInt(userInput1);
+                            System.out.println(selected1.getSubmenu());
+                            switch(selected1){
+                                case ADD_EMPLOYEE:
+                                try{
+                                    EmployeeAddingMethodsCA_2.addEmployee("EmployeeList.txt", scanner);
+                                }catch(Exception e){
+                                    System.out.println("Error adding employee manually: "+ e.getMessage());
+                                }
+                                break;
+                                case GENERATE_RANDOM_EMPLOYEE:
+                                try{
+                                    EmployeeAddingMethodsCA_2.generateRandom("EmployeeList.txt");
+                                }catch(Exception e){
+                                    System.out.println("Error generating employee randomly: "+ e.getMessage());
+                                }
+                                break;
+                                case RETURN:
+                                break;
+                            }
+                        }catch(IllegalArgumentException e){
+                            System.out.println("Invalid option has chosen.");
+                        }
+                    //when user choose return option program turn back to top menu
+                    }while(selected1 != SubMenuCA_2.RETURN);
+                    break;
+                    case EXIT:
+                    System.out.println("Exited from program...");
+                    break;
         }
             
             }catch(IllegalArgumentException e){
