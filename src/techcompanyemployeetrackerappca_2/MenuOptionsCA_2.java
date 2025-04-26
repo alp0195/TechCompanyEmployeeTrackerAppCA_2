@@ -13,7 +13,7 @@ public enum MenuOptionsCA_2 {
     
     //all enum constants comes with definition to show which is user will see.
     SORT("Sort Employees in the file (Alphabetically by Name)"), SHUFFLE("Shuffle Employees in the file"), 
-    SEARCH("Search Employee"), ADD_EMPLOYEE_MENU("Add Employee"), EXIT("Exiting...");
+    SEARCH("Search Employee"), ADD_EMPLOYEE_MENU("Add Employee Menu"), EXIT("Exiting...");
     
     //final variable which is hold description
     private final String topmenu;
