@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package techcompanyemployeetrackerappca_2;
-import java.util.Scanner;
+import java.util.*;
 import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.ADD_EMPLOYEE_MENU;
 import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.EXIT;
 import static techcompanyemployeetrackerappca_2.MenuOptionsCA_2.SEARCH;
@@ -35,6 +35,24 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                 switch(selected){
             
                     case SORT:
+                        try{
+                            // Reads employee list from file
+                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            //for sorting created SortMethodCA_2 object
+                            SortMethodCA_2<String> sorted = new SortMethodCA_2<>();
+                            //these all adding in a sorted object which is read from file
+                            sorted.addAll(employeeList);
+                            //recursiveInsertionSort() with this method will do sorting of list
+                            sorted.recursiveInsertionSort();
+                            
+                            //İt's print first 20 element of sorted list
+                            for(int i= 0; i < sorted.size() && i<20; i++){
+                                System.out.println(sorted.get(i));
+                            }
+                            
+                        }catch(Exception e){
+                            System.out.println("Error while sorting: "+ e.getMessage());
+                        }
                     break;
                     case SHUFFLE:
                     break;
