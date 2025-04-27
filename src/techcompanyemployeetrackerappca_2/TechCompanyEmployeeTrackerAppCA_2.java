@@ -46,6 +46,7 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                             sorted.recursiveInsertionSort();
                             
                             //İt's print first 20 element of sorted list
+                            System.out.println("First 20 employees after list sorted.\n");
                             for(int i= 0; i < sorted.size() && i<20; i++){
                                 System.out.println(sorted.get(i));
                             }
@@ -55,6 +56,18 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                         }
                     break;
                     case SHUFFLE:
+                        try{
+                            //Reads all list from file
+                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            //Shuffle the list
+                            Collections.shuffle(employeeList);
+                            System.out.println("First 20 employees after list shuffled.\n");
+                            for(int i = 0; i < employeeList.size() && i<20; i++){
+                                System.out.println(employeeList.get(i));
+                            }
+                        }catch(Exception e){
+                            System.out.println("Error while shuffling: "+ e.getMessage());
+                        }
                     break;
                     case SEARCH:
                     break;
