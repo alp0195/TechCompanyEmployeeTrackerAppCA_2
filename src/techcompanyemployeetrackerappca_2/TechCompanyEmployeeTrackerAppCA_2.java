@@ -55,6 +55,19 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                             System.out.println("Error while sorting: "+ e.getMessage());
                         }
                     break;
+                    case LIST_ALL:
+                        try{
+                            //Reads all from file and putting into a ArrayList
+                            ArrayList<String> allEmployees = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            System.out.println("*** All Employees ***\n");
+                            //separate every line and puts in a different row
+                            for(int i = 0; i < allEmployees.size(); i++){
+                                System.out.println(allEmployees.get(i));//prints every line with seperated rows
+                            }
+                        }catch(Exception e){
+                            System.out.println("Error while printing all list: "+ e.getMessage());
+                        }
+                    break;
                     case SHUFFLE:
                         try{
                             //Reads all list from file
