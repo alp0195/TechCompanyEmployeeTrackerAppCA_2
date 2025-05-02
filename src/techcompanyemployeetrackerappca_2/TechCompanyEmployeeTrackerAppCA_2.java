@@ -83,6 +83,27 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                         }
                     break;
                     case SEARCH:
+                        try{
+                            //Reads from file
+                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            
+                            //Sort
+                            SortMethodCA_2<String> sorted = new SortMethodCA_2<>();
+                            sorted.addAll(employeeList);
+                            sorted.recursiveInsertionSort();
+                            
+                            //Search method object
+                            SearchMethodCA_2<String> search = new SearchMethodCA_2<>();
+                            search.addAll(sorted);
+                            
+                            System.out.println("Enter full name to search: ");
+                            String nameforSearch = scanner.nextLine().trim();
+                            
+                            search.printEmployeeInfo(nameforSearch);
+                        
+                        }catch(Exception e){
+                            System.out.println("Error while searching: "+ e.getMessage());
+                        }
                     break;
                     case ADD_EMPLOYEE_MENU:
                     //sub menu options will run in there
