@@ -40,7 +40,7 @@ public class SearchMethodCA_2<ElemType> extends ArrayList<ElemType> {
             String found = (String) get(index);
             String[] parts = found.split("\\|");
             
-            System.out.println("Employee found:\\n");
+            System.out.println("Employee found:\n");
             System.out.println("Name: "+parts[0].trim());
             System.out.println("Title Type: "+parts[1].trim());
             System.out.println("Departmant: "+parts[2].trim());
