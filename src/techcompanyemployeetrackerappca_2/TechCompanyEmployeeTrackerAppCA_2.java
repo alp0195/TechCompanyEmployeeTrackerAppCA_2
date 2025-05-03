@@ -37,7 +37,7 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                     case SORT:
                         try{
                             // Reads employee list from file
-                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("Applicants_Form.txt");
                             //for sorting created SortMethodCA_2 object
                             SortMethodCA_2<String> sorted = new SortMethodCA_2<>();
                             //these all adding in a sorted object which is read from file
@@ -58,7 +58,7 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                     case LIST_ALL:
                         try{
                             //Reads all from file and putting into a ArrayList
-                            ArrayList<String> allEmployees = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            ArrayList<String> allEmployees = FileReaderCA_2.readEmployeeList("Applicants_Form.txt");
                             System.out.println("*** All Employees ***\n");
                             //separate every line and puts in a different row
                             for(int i = 0; i < allEmployees.size(); i++){
@@ -71,7 +71,7 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                     case SHUFFLE:
                         try{
                             //Reads all list from file
-                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("Applicants_Form.txt");
                             //Shuffle the list
                             Collections.shuffle(employeeList);
                             System.out.println("First 20 employees after list shuffled.\n");
@@ -85,7 +85,7 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                     case SEARCH:
                         try{
                             //Reads from file
-                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("EmployeeList.txt");
+                            ArrayList<String> employeeList = FileReaderCA_2.readEmployeeList("Applicants_Form.txt");
                             
                             //Sort
                             SortMethodCA_2<String> sorted = new SortMethodCA_2<>();
@@ -119,14 +119,14 @@ public class TechCompanyEmployeeTrackerAppCA_2 {
                             switch(selected1){
                                 case ADD_EMPLOYEE:
                                 try{
-                                    EmployeeAddingMethodsCA_2.addEmployee("EmployeeList.txt", scanner);
+                                    EmployeeAddingMethodsCA_2.addEmployee("Applicants_Form.txt", scanner);
                                 }catch(Exception e){
                                     System.out.println("Error adding employee manually: "+ e.getMessage());
                                 }
                                 break;
                                 case GENERATE_RANDOM_EMPLOYEE:
                                 try{
-                                    EmployeeAddingMethodsCA_2.generateRandom("EmployeeList.txt");
+                                    EmployeeAddingMethodsCA_2.generateRandom("Applicants_Form.txt");
                                 }catch(Exception e){
                                     System.out.println("Error generating employee randomly: "+ e.getMessage());
                                 }
