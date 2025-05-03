@@ -16,7 +16,7 @@ public class EmployeeAddingMethodsCA_2 {
     private static String[] TITLES = {"Head Manager", "Assistant Manager", "Team Lead"};
     private static String[] DEPARTMANTS = {"Customer Service", "Technical Support", "HR"};
     //File name decided when file created it's will get this name 
-    private static String fileName = "EmployeeList.txt";
+    private static String fileName = "Applicants_Form";
     
     //Manually adding employee method
     public static void addEmployee(String fileName, Scanner scanner) throws IOException{
